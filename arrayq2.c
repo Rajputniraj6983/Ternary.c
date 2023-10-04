@@ -1,21 +1,30 @@
 #include<stdio.h>
 main(){
-	short n;
-	float average = 0;
+	int num1,num2;
+	printf("enter the value of num 1 : ");
+	scanf("%d",&num1);
 	
-	printf("enter the value of array : ");
-	scanf("%d",&n);
+	printf("enter the value of num 2 : ");
+	scanf("%d",&num2);
 	
-	short a[n];
-	printf("enter the value of array: \n");
-	
-	for(short i = 1;i < n;i++){
-		printf("enter the value of a[%hi] :",i);
-		scanf("%d",&a[i]);
-		average += a[i];
+	if(num1 < num2){
+	    num1 = num1 + num2;
+		num2 = num1 - num2;
+		num1 = num1 - num2;	
 	}
-	printf("average of array : %.1f", average /n);
-	
-	
-	
+       int n = num1 - num2;
+       int a[n];
+       printf("\n\nthe array is : ");
+       
+       short j = 0;
+       
+       for (int i = num2;i <= num1; i++){
+       	if(i % 4 == 0){
+       		a[j] = i;
+       		j += 1;
+		   }
+	   }
+	for(int i = 0;i < j; i++){
+		printf("%d",a[i]);
+	}
 }
